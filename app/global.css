@@ -1,96 +1,63 @@
-/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Reset some default styles */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 240, 240, 240;
+  
+  /* Button and UI variables for light mode */
+  --button-bg: #2563eb;
+  --button-hover: #1d4ed8;
+  --button-text: #ffffff;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f8fafc;
+  --border-color: #e2e8f0;
+  --warning-color: #fef3cd;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 20, 20, 20;
+  
+  /* Button and UI variables for dark mode - lighter buttons */
+  --button-bg: #60a5fa;
+  --button-hover: #3b82f6;
+  --button-text: #1f2937;
+  --bg-color: #1f2937;
+  --text-color: #ffffff;
+  --header-bg: #374151;
+  --border-color: #4b5563;
+  --warning-color: #fbbf24;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-html, body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.5;
-  min-height: 100%;
-  background-color: #fff;
-  color: #000;
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
-/* Dark mode class for body */
-html.dark body {
-  background-color: #111;
-  color: #eee;
-}
-
-/* Links */
 a {
   color: inherit;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Buttons */
-button {
-  font-family: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-  background: none;
-  border: 1px solid #ccc;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: #f0f0f0;
-}
-
-html.dark button:hover {
-  background-color: #222;
-  border-color: #555;
-}
-
-/* Header / nav */
-header nav ul {
-  display: flex;
-  gap: 12px;
-}
-
-header nav ul li {
-  list-style: none;
-}
-
-/* Main content */
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 12px 24px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-html.dark footer {
-  color: #aaa;
-}
-
-/* Sections */
-section {
-  border: 1px solid #ccc;
-  padding: 12px;
-  margin: 12px 0;
-  border-radius: 8px;
-  background-color: #fafafa;
-}
-
-html.dark section {
-  border-color: #444;
-  background-color: #222;
 }

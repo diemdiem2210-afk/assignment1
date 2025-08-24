@@ -1,21 +1,17 @@
-// app/layout.tsx
-import './globals.css';
-import ClientHeader from './ClientHeader';
+
+import './global.css';
+import ClientLayout from './components/ClientLayout';
 
 export const metadata = {
-  title: 'Assignment 1',
-  description: 'Next.js App Router Assignment',
+  title: 'Assignment 1 - Web Application',
+  description: 'Next.js application with HTML5 code generator and interactive pages',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <ClientHeader />
-        <main style={{ padding: '24px', marginTop: '50px' }}>{children}</main>
-        <footer style={{ padding: '12px 24px', borderTop: '1px solid #ccc', marginTop: '24px' }}>
-          &copy; {new Date().getFullYear()} Your Name (S1234567)
-        </footer>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
